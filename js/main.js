@@ -103,14 +103,17 @@ Hoisting
 - Set 'birthday' to an integer for April 21, 1983.
 - There are a couple of hoisting issues in this exercise. Fix them to make the assertion pass.
 **************************************************************************************/
+(function(){
 
 
 var date = new Date(1983, 3, 21);
 var birthday = date;
 
+
 var bdayMsg = function(){
   return "You were born on " + date.toDateString();
 };
+
 bdayMsg();
 console.log("#5 bdayMsg()", bdayMsg());
 console.assert(bdayMsg() == "You were born on Thu Apr 21 1983", "#5 Test failed. Check function hoisting." )
@@ -234,6 +237,10 @@ Compartmentalization
 
   duplicate();
 
-  console.log( "multiply", multiply );
-  console.assert( multiply == 16, "Test failed. How can we isolate duplication()" );
+  console.log( "multiply", multiply )
+  console.assert( multiply == 16, "Test failed. How can we isolate duplication()" )
 })();
+
+
+/*************************************************************************************
+**************************************************************************************/
